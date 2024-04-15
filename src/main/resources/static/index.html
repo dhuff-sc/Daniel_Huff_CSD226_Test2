@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 2 App</title>
+</head>
+<body>
+    <h1>Spring Boot Frontend</h1>
+    <div id="stringData"></div>
+    <div id="intData"></div>
+</body>
+<footer>
+    <script>
+        var stringData = document.getElementById('stringData');
+        var intData = document.getElementById('intData');
+
+        fetch('/string/42')
+            .then(response => response.text())
+            .then(data => stringData.innerHTML = data);
+
+        fetch('/int/42')
+            .then(response => response.text())
+            .then(data => intData.innerHTML = data);
+    </script>
+
+</footer>
+</html>
